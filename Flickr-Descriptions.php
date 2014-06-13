@@ -20,7 +20,7 @@ $json = file_get_contents($url);
 // a little string clean up to convert jsonp response to a valid json string, then decode to a PHP object
 $response = json_decode( ltrim(rtrim(str_replace( "jsonFlickrApi",  "", $json), ')'),'('));
 
-$set_title = $response->photoset->title;
+$photoset_title = $response->photoset->title;
 
 echo "
     <div>
