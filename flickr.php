@@ -14,17 +14,18 @@ $url = "http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&a
 // read in API response
 $json = file_get_contents($url);
  
-// a little string clean up to convert jsonp response to a valid json string, then decode to a PHP object
+// Convert jsonp response to a valid json string, then decode to a PHP object
 $response = json_decode( ltrim(rtrim(str_replace( "jsonFlickrApi",  "", $json), ')'),'('));
 
 $photoset_title = $response->photoset->title;
 
+// Output user-established photoset title
 echo "
 <div>
     <h2>$title</h2>
 </div>";
 
-
+// Parse getPhotos response for photo information and build photo urls
 if($response->stat == 'ok')
 {
     $photos = $response->photoset->photo;
@@ -48,6 +49,8 @@ if($response->stat == 'ok')
         $image.= '
     
     </a>';
+
+    // Generate photo and description output
         echo $image;
     }
     }
