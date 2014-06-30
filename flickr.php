@@ -14,7 +14,7 @@ $descriptions = $_GET['descriptions'];
 $picture_size = $_GET['picture_size'];
 
 // Get photos from the gallery, convert json response to valid json string, then decode to PHP object
-$url = "http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=$api_key&photoset_id=$photoset_id&format=json&nojsoncallback=1";
+$url = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=$api_key&photoset_id=$photoset_id&format=json&nojsoncallback=1";
 $json = file_get_contents($url);
 $response = json_decode( ltrim(rtrim(str_replace( "jsonFlickrApi",  "", $json), ')'),'('));
 
@@ -51,7 +51,7 @@ if($response->stat == 'ok')
         
         // API call to get info for each photo, clean up the response, and define the description variable
         
-        $info_url = "http://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=$api_key&photo_id=$id&format=json&nojsoncallback=1";
+        $info_url = "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=$api_key&photo_id=$id&format=json&nojsoncallback=1";
         $info_json = file_get_contents($info_url);
         $info_response = json_decode( ltrim(rtrim(str_replace( "jsonFlickrApi",  "", $info_json), ')'),'('));
         $description = $info_response->photo->description->_content;
