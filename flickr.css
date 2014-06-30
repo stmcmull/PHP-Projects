@@ -1,0 +1,53 @@
+.flickr-block {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.2em;
+}
+
+.flickr-description {
+    text-align: center;
+    text-size: 0.9em;
+}
+
+.flickr-image {
+    text-align: center;
+}
+
+.flickr-image img {
+}
+
+.flickr-block-large-square {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.2em;
+    width: 15%;
+}
+
+.flickr-block-thumbnail {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.2em;
+    width: 18%;
+}
+
+.flickr-block-small {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.2em;    
+    width: 32%;
+    
+}
+
+.flickr-block-medium {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.2em;
+    width: 49%;
+}
+
+.flickr-block-large {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.2em;
+    width: 90%;
+}

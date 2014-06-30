@@ -1,0 +1,30 @@
+#macro( renderflickr $flickrDescriptions)
+#set($q = '?')
+#set($title = $flickrDescriptions.getChild('title').value)
+#set($photoset_id = $flickrDescriptions.getChild('photoset_id').value)
+#set($descriptions = $flickrDescriptions.getChild('descriptions').value)
+#set($picture_size = $flickrDescriptions.getChild('picture_size').value)
+
+#if($title )
+    #set($q = "${q}&amp;title=$title")
+#end
+#if($photoset_id )
+    #set($q = "${q}&amp;photoset_id=${photoset_id}")
+#end
+#if($descriptions )
+    #set($q = "${q}&amp;descriptions=$descriptions")
+#end
+#if($picture_size )
+    #set($q = "${q}&amp;picture_size=${picture_size}")
+#end
+ 
+[system-view:internal]
+    <h1><center>This is the area where your Flickr photoset will appear once you publish!</center></h1>
+[/system-view:internal]  
+
+[system-view:external] 
+    <div class="popup-gallery">
+    <!--#[[#]]#include virtual="/_includes/flickr.php${q}" -->
+    </div>
+[/system-view:external]  
+#end

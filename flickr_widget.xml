@@ -1,0 +1,17 @@
+<system-data-structure>
+    <group identifier="flickrDescriptions" label="flickrDescriptions">
+        <text identifier="title" label="title" help-text="The title associated with the Flickr photoset"/>
+        <text identifier="photoset_id" label="photoset_id" help-text="The ID number associated with the Flickr photoset"/>
+        <text type="multi-selector" identifier="descriptions" label="descriptions" required="true">
+            <selector-item value="No" selected="true"/>
+            <selector-item value="Yes"/>
+        </text>
+        <text type="multi-selector" identifier="picture_size" label="picture_size" required="true">
+            <selector-item value="Large_Square" selected="true"/>
+            <selector-item value="Thumbnail"/>
+            <selector-item value="Small"/>
+            <selector-item value="Medium"/>
+            <selector-item value="Large"/>
+        </text>
+    </group>
+</system-data-structure>
